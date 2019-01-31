@@ -24,65 +24,57 @@
 </div>
 <a name="mfooter"></a>
 <!-- ............自定义尾部代码结束............ -->
-
-
 <script type="text/javascript" src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
 <script type="text/javascript">
     /**
         用来设置初始时需要执行的js
     */
     $(document).ready(function(){
-
         //加载顶部进度条
         NProgress.start();
         NProgress.done();
         $("#myProgressBar").hide();
-
         //设置背景图片地址
         if ($("#head_bg_img").val()!=null && $("#head_bg_img").val()!="") {
             $("#myheader_bg").css("background-image","url("+$("#head_bg_img").val()+")");
         }else{
-            $("#myheader_bg").css("background-image","url(https://ww1.sinaimg.cn/large/0062YmUwgy1fthnpo4n7yj31hc0hrq8e.jpg)");
+            $("#myheader_bg").css("background-image","url(https://i.loli.net/2019/01/31/5c52e73546215.jpg)");
         }
-
         //标题
         $("#mypost_title_h").html($("#cb_post_title_url").html());
-
         //正文和标题淡入
         $("#mainContent").css("opacity","1");
         $("#mainContent").css("margin-top","0");
         $("#mypost_title").css("opacity","1");
-        $("#mypost_title").css("top","75pt");
-
+        $("#mypost_title").css("top","42pt");
         //更改iocn图标
         var linkObject = document.createElement("link");
         linkObject.rel = "shortcut icon";
-        linkObject.href = "https://ww1.sinaimg.cn/large/0062YmUwgy1fthbsa7nmoj302g02ggle.jpg";
+        linkObject.href = "https://i.loli.net/2019/01/31/5c52e907bfa56.png";
         document.getElementsByTagName("head")[0].appendChild(linkObject);
     })
-
     /**
         设置ajax请求加载完所有数据时执行的js
     */
     setTimeout(afterAjax,1000);
     function afterAjax(){
         //假如是首页
-        if (window.location.href == "https://www.cnblogs.com/summertime-wu"|| 
-            window.location.href == "https://www.cnblogs.com/summertime-wu/"||
-            window.location.href == "http://www.cnblogs.com/summertime-wu"|| 
-            window.location.href == "http://www.cnblogs.com/summertime-wu/") {
+        if (window.location.href == "https://www.cnblogs.com/BlogE"|| 
+            window.location.href == "https://www.cnblogs.com/BlogE/"||
+            window.location.href == "http://www.cnblogs.com/BlogE"|| 
+            window.location.href == "http://www.cnblogs.com/BlogE/") {
             $("#mypost_title_f").html("");
-            $("#mypost_title_e").html("<a href='https://cnblogs.com/summertime-wu'>立德立言，无闻西东</a>");
+            $("#mypost_title_e").html("<a href='https://cnblogs.com/BlogE'>路漫漫其修远兮，吾将上下而求索。</a>");
         }else{
             var classification = null;
             if ($("#BlogPostCategory").html()!=null && $("#BlogPostCategory").html()!= "") {
                 classification = $("#BlogPostCategory").html();
                 classification = classification.substring(3,classification.length);
             }else{
-                classification = "<a href='https://cnblogs.com/summertime-wu'>暂未分类</a>";
+                classification = "<a href='https://cnblogs.com/BlogE'>暂未分类</a>";
             }
             var ftitle = "Published on "+ $("#post-date").html() + " in " +  classification
-            + " with <a href='https://cnblogs.com/summertime-wu'>夏日浅笑、</a>";
+            + " with <a href='https://cnblogs.com/BlogE'>Blog-E</a>";
             //设置副标题标题
             $("#mypost_title_f").html(ftitle);
             //设置标题分类按钮
@@ -108,12 +100,12 @@
     $("#bottom-s").click(function(){
         AddToWz(cb_entryId);return false;
     })
-    if (window.location.href == "https://www.cnblogs.com/summertime-wu"|| 
-            window.location.href == "https://www.cnblogs.com/summertime-wu/"||
-            window.location.href == "http://www.cnblogs.com/summertime-wu"|| 
-            window.location.href == "http://www.cnblogs.com/summertime-wu/") {
+    if (window.location.href == "https://www.cnblogs.com/BlogE"|| 
+            window.location.href == "https://www.cnblogs.com/BlogE/"||
+            window.location.href == "http://www.cnblogs.com/BlogE"|| 
+            window.location.href == "http://www.cnblogs.com/BlogE/") {
         $("#bottom-d").html("友情链接");
-        $("#bottom-d").attr("href","https://www.cnblogs.com/summertime-wu/p/9350833.html");
+        $("#bottom-d").attr("href","https://www.cnblogs.com/BlogE/p/9350833.html");
     }else{
         var url = window.location.href;
         var lastUrl = url.substring(url.lastIndexOf("/")+1);
@@ -211,7 +203,7 @@
                     $('<a name="' + '_caption_' + index + '"></a>').insertBefore(captions_ori[index]); 
                     return '<li id="'+index+'li"><a href="#_caption_' + index + '">' + self.innerHTML + '</a><ul></ul></li>';
                 } else {
-                    // add by summertime-wu 增加h3链接跳转
+                    // add by BlogE 增加h3链接跳转
                     index2 += 1;
                     $('<a name="' + '_caption' + index2 + '"></a>').insertBefore(captions_ori2[index2]); 
                     $("#"+index+"li ul").append("<li><a href='#_caption" + index2 + "' style='color:#5f5f5f;'>" +self.innerHTML+"</a></li>");
