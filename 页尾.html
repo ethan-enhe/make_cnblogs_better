@@ -214,12 +214,13 @@
         runAll: function() {
             /* 运行所有方法
              * setAtarget() 博客园内标签新窗口打开
-             * setContent() 设置目录
+             * setContent() 设置目录（仅在窗口够大时）
              * setCopyright() 设置版权信息
              * setCodeRow() 代码行号显示
              */ 
-            this.setAtarget(); 
-            this.setContent();
+            this.setAtarget();
+            if(document.body.clientWidth>=1000)
+                this.setContent();
             // this.setCopyright();
             this.setCodeRow();
         }
